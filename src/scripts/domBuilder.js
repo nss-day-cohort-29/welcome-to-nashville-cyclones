@@ -1,6 +1,6 @@
 const domBuilder = {
     inputfieldBuilder(){
-        let searchInputField = 
+        let searchInputField =
         `
         <h2>Search Nashville</h2>
         <form>
