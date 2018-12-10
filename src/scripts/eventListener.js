@@ -26,7 +26,7 @@ function parksValue() {
 
 function restaurantsValue() {
     let userSearchRestaurantValue = document.getElementById("restaurantSearch").value;
-    console.log(userSearchRestaurantValue);
+   //  console.log(userSearchRestaurantValue);
  }
 
  function meetupsValue() {
