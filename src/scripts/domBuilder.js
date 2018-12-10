@@ -18,17 +18,17 @@ const domBuilder = {
         return searchInputField;
     },
 
-    resultsBuilder(){
+    resultsBuilder(one, two){
         let resultsField =
-        `<h2>Results</h2>
-         <p>1. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>
-         <p>2. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>
-         <p>3. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>
-         <p>4. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>
+        `
+         <p> ${one}</p>
+         <p> ${two}</p><button type = button class = 'saveButton'>SAVE</button>
+        
          `
 
          return resultsField;
     },
+
 
     itineraryBuilder(){
         let itineraryField = 
