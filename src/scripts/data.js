@@ -28,24 +28,26 @@ const data = {
 
     
     // Fetches all concert in the Nashville Area by restaurant and food type:
-    restaurantData(){
-        fetch("https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city", {
+    restaurantData(foodType){
+        fetch(`https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city&q=${foodType}`, {
             headers: {
-                "user-key": "e778850ea3b854b759614b6391f55663"
+                "user-key": "0f074d9d28fb23cdabd8d271ebb03bdb"
             }
         })
         .then(foods => foods.json())
         .then(Allfoods => {
             let allfoods = Allfoods.restaurants
             allfoods.forEach(foods => {
-                console.log("Restaurant name: " + foods.restaurant.name)
-                console.log("Type of food: " + foods.restaurant.cuisines)
+               console.log(`Restaurant name:  ${foods.restaurant.name}
+                 Type of food:  ${foods.restaurant.cuisines}`)
+                 let foodHTML = foods.restaurant.name;
+                 domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML));
             })
         })
     },
 
     queryEvents() {
-        return fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&token=BJXHAMMBOWECTXM2ZLAL", {
+        fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&token=BJXHAMMBOWECTXM2ZLAL", {
             headers: {
                 "Authorization": "Bearer BJXHAMMBOWECTXM2ZLAL"
             }
