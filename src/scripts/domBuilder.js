@@ -19,7 +19,7 @@ const domBuilder = {
     },
 
     resultsBuilder(){
-        let resultsField = 
+        let resultsField =
         `<h2>Results</h2>
          <p>1. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>
          <p>2. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>

@@ -3,16 +3,16 @@
 
 // Targeting the elements (in this case the buttons, and giving them an event listener that then triggers a function that is later defined.)
 let userSearchParkButton = document.getElementById("parksButton");
-userSearchParkButton.addEventListener('click', parksValue);
+userSearchParkButton.addEventListener("click", parksValue);
 
 let userSearchRestaurantsButton = document.getElementById("restaurantsButton");
-userSearchRestaurantsButton.addEventListener('click', restaurantsValue);
+userSearchRestaurantsButton.addEventListener("click", restaurantsValue);
 
 let userSearchMeetUpsButton = document.getElementById("meetButton");
-userSearchMeetUpsButton.addEventListener('click', meetupsValue);
+userSearchMeetUpsButton.addEventListener("click", meetupsValue);
 
 let userSearchConcertsButton = document.getElementById("concertsButton");
-userSearchConcertsButton.addEventListener('click', concertsValue);
+userSearchConcertsButton.addEventListener("click", concertsValue);
 
 
 
