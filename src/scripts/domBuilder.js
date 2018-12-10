@@ -1,18 +1,48 @@
 const domBuilder = {
     inputfieldBuilder(){
         let searchInputField =
-        `
-        <h2>Search Nashville</h2>
+        `<h2>Search Nashville</h2>
         <form>
-        <input type = "text" placeholder = "Parks"> <button type = button class = 'parksButton'>CLICK ME</button>
-        <input type = "text" placeholder = "Restaurants"><button type = button class = 'parksButton'>CLICK ME</button>
-        <input type = "text" placeholder = "Meet-Up"><button type = button class = 'parksButton'>CLICK ME</button>
-        <input type = "text" placeholder = "Concerts"><button type = button class = 'parksButton'>CLICK ME</button>
+
+        <input type = "text" placeholder = "Parks by feature" id = "parkSearch"><button type = button id = 'parksButton'>LETS GO!</button> <br>
+
+        <input type = "text" placeholder = "Restaurants by food type" id = "restaurantSearch"><button type = button id = 'restaurantsButton'>LETS GO!</button> <br>
+
+        <input type = "text" placeholder = "Meet-ups by topic" id = "meetupSearch"><button type = button id = 'meetButton'>LETS GO!</button> <br>
+
+        <input type = "text" placeholder = "Concerts by genre" id = "concertSearch"><button type = button id = 'concertsButton'>LETS GO!</button>
+
         </form>
         `
-        console.log(searchInputField);
+        // console.log(searchInputField);
         return searchInputField;
+    },
+
+    resultsBuilder(){
+        let resultsField = 
+        `<h2>Results</h2>
+         <p>1. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>
+         <p>2. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>
+         <p>3. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>
+         <p>4. "the results of the parks will be passed through here"</p><button type = button class = 'saveButton'>SAVE</button>
+         `
+
+         return resultsField;
+    },
+
+    itineraryBuilder(){
+        let itineraryField = 
+        `<h2>Itinerary</h2>
+        <p>Park: "User's park will be passed through here"</p>
+        <p>Restaurant: "User's restaurant will be passed through here"</p>
+        <p>Meet-up: "User's meetup will be passed through here"</p>
+        <p>Concert: "User's concert will be passed through here"</p>
+        `
+
+        return itineraryField;
     }
+
+
 }
 
 // domBuilder.inputfieldBuilder();
