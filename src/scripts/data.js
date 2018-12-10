@@ -7,6 +7,10 @@ const data = {
             AllParks.forEach(park => {
                 console.log("Park name: " + park.park_name)
                 console.log("Park address: " + park.mapped_location_address)
+                let parkHTML = park.park_name;
+                let parkAddressHTML = park.mapped_location_address;
+
+                domComponents.appendResultsInput(domBuilder.resultsBuilder(parkHTML, parkAddressHTML));
             })
         })
     },
@@ -20,7 +24,10 @@ const data = {
             .then(Allevents => {
                 let allEvents = Allevents._embedded.events
                 allEvents.forEach(event => {
-                    console.log("Event name: " + event.name)    
+                    console.log("Event name: " + event.name)  
+                    let eventHTML = event.name
+                    let two = "test"
+                    domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, two));
                 })
             })
         },
@@ -31,7 +38,7 @@ const data = {
     restaurantData(){
         fetch("https://developers.zomato.com/api/v2.1/search?entity_id=1138&entity_type=city", {
             headers: {
-                "user-key": "e778850ea3b854b759614b6391f55663"
+                "user-key": "0f074d9d28fb23cdabd8d271ebb03bdb"
             }
         })
         .then(foods => foods.json())
@@ -40,6 +47,9 @@ const data = {
             allfoods.forEach(foods => {
                 console.log("Restaurant name: " + foods.restaurant.name)
                 console.log("Type of food: " + foods.restaurant.cuisines)
+                let restaurantNameHTML = foods.restaurant.name;
+                let restaurantType = foods.restaurant.cuisines;
+                domComponents.appendResultsInput(domBuilder.resultsBuilder(restaurantNameHTML, restaurantType));
             })
         })
     },
@@ -65,9 +75,14 @@ const data = {
                         .then(venues => venues.json())
                         .then(parsedVenues => {
                             
-                            let venueAddress = parsedVenues.address.address_1;
+                            let venueAddress = parsedVenues.name.address_1;
                             console.log(`Venue Name: ${venueName} Venue Address: ${venueAddress}`);
-                    });
+
+                            // let eventHTML = event.name
+                            // let two = "test"
+                            domComponents.appendResultsInput(domBuilder.resultsBuilder(venueName, venueAddress));
+                    
+                        });
                 })
             })
         }
