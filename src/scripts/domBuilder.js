@@ -18,14 +18,17 @@ const domBuilder = {
         return searchInputField;
     },
 
-    resultsBuilder(one){
+    resultsBuilder(one, two){
         let resultsField =
         `
-         <p>${one}</p> <button type = button class = 'saveButton'>SAVE</button>
+         <p> ${one}</p>
+         <p> ${two}</p><button type = button class = 'saveButton'>SAVE</button>
+        
          `
 
          return resultsField;
     },
+
 
     itineraryBuilder(){
         let itineraryField = 

@@ -7,6 +7,10 @@ const data = {
             AllParks.forEach(park => {
                 console.log("Park name: " + park.park_name)
                 console.log("Park address: " + park.mapped_location_address)
+                let parkHTML = park.park_name;
+                let parkAddressHTML = park.mapped_location_address;
+
+                domComponents.appendResultsInput(domBuilder.resultsBuilder(parkHTML, parkAddressHTML));
             })
         })
     },
@@ -20,7 +24,10 @@ const data = {
             .then(Allevents => {
                 let allEvents = Allevents._embedded.events
                 allEvents.forEach(event => {
-                    console.log("Event name: " + event.name)    
+                    console.log("Event name: " + event.name)  
+                    let eventHTML = event.name
+                    let two = "test"
+                    domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, two));
                 })
             })
         },
@@ -41,7 +48,8 @@ const data = {
                console.log(`Restaurant name:  ${foods.restaurant.name}
                  Type of food:  ${foods.restaurant.cuisines}`)
                  let foodHTML = foods.restaurant.name;
-                 domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML));
+                 let typeHTML = foods.restaurant.cuisines;
+                 domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, typeHTML));
             })
         })
     },
@@ -67,9 +75,14 @@ const data = {
                         .then(venues => venues.json())
                         .then(parsedVenues => {
                             
-                            let venueAddress = parsedVenues.address.address_1;
+                            let venueAddress = parsedVenues.name.address_1;
                             console.log(`Venue Name: ${venueName} Venue Address: ${venueAddress}`);
-                    });
+
+                            // let eventHTML = event.name
+                            // let two = "test"
+                            domComponents.appendResultsInput(domBuilder.resultsBuilder(venueName, venueAddress));
+                    
+                        });
                 })
             })
         }
