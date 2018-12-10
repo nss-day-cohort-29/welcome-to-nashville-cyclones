@@ -45,7 +45,7 @@ const data = {
     },
 
     queryEvents() {
-        return fetch(`https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&token=BJXHAMMBOWECTXM2ZLAL`, {
+        return fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&token=BJXHAMMBOWECTXM2ZLAL", {
             headers: {
                 "Authorization": "Bearer BJXHAMMBOWECTXM2ZLAL"
             }
