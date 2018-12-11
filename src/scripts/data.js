@@ -12,6 +12,7 @@ const data = {
 
                 domComponents.appendResultsInput(domBuilder.resultsBuilder(parkHTML, parkAddressHTML));
             })
+            clickSave();
         })
     },
 
@@ -29,6 +30,7 @@ const data = {
                     let two = "test"
                     domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, two));
                 })
+                clickSave();
             })
         },
 
@@ -48,10 +50,10 @@ const data = {
                console.log(`Restaurant name:  ${foods.restaurant.name}
                  Type of food:  ${foods.restaurant.cuisines}`)
                  let foodHTML = foods.restaurant.name;
-                 let typeHTML = foods.restaurant.cuisines;
-                 domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, typeHTML, "restaurant"));
-                clickSave();
+                 let addressHTML = foods.restaurant.location.address;
+                 domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, addressHTML));
             })
+            clickSave();
         })
     },
 
@@ -82,7 +84,7 @@ const data = {
                             // let eventHTML = event.name
                             // let two = "test"
                             domComponents.appendResultsInput(domBuilder.resultsBuilder(venueName, venueAddress));
-                    
+                            clickSave();
                         });
                 })
             })
