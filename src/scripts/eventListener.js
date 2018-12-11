@@ -82,3 +82,32 @@ let clickSave = () => {
       saveButton[i].addEventListener("click", notAnonymous);
    }
 }
+
+const inputParks = document.getElementById("parkSearch");
+const inputRestaurants = document.getElementById("restaurantSearch");
+const inputMeetups = document.getElementById("meetupSearch");
+const inputConcerts = document.getElementById("concertSearch");
+
+inputParks.addEventListener("keyup", function(event){
+   if (event.keyCode === 13) {
+      document.getElementById("parksButton").click();
+   }
+});
+
+inputRestaurants.addEventListener("keyup", function(event){
+   if (event.keyCode === 13) {
+      document.getElementById("restaurantsButton").click();
+   }
+});
+
+inputMeetups.addEventListener("keyup", function(event){
+   if (event.keyCode === 13) {
+      document.getElementById("meetButton").click();
+   }
+});
+
+inputConcerts.addEventListener("keyup", function(event){
+   if (event.keyCode === 13) {
+      document.getElementById("concertsButton").click();
+   }
+})
