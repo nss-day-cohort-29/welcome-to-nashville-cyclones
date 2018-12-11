@@ -48,8 +48,8 @@ const data = {
                console.log(`Restaurant name:  ${foods.restaurant.name}
                  Type of food:  ${foods.restaurant.cuisines}`)
                  let foodHTML = foods.restaurant.name;
-                 let typeHTML = foods.restaurant.cuisines;
-                 domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, typeHTML));
+                 let addressHTML = foods.restaurant.location.address;
+                 domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, addressHTML));
             })
         })
     },
