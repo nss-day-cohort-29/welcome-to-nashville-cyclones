@@ -1,7 +1,7 @@
 const data = {
     // Fetches all parks in the Nashville area by name:
     parkData(){
-        fetch("https://data.nashville.gov/resource/xbru-cfzi.json")
+        fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?${}`)
         .then(parks => parks.json())
         .then(AllParks => {
             AllParks.forEach(park => {
