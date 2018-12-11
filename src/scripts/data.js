@@ -12,6 +12,7 @@ const data = {
 
                 domComponents.appendResultsInput(domBuilder.resultsBuilder(parkHTML, parkAddressHTML));
             })
+            clickSave();
         })
     },
 
@@ -29,6 +30,7 @@ const data = {
                     let eventAddy = event.dates.start.localDate
                     domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, eventAddy));
                 })
+                clickSave();
             })
         },
 
@@ -51,6 +53,7 @@ const data = {
                  let addressHTML = foods.restaurant.location.address;
                  domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, addressHTML));
             })
+            clickSave();
         })
     },
 
@@ -81,7 +84,7 @@ const data = {
                             // let eventHTML = event.name
                             // let two = "test"
                             domComponents.appendResultsInput(domBuilder.resultsBuilder(venueName, venueAddress));
-                    
+                            clickSave();
                         });
                 })
             })

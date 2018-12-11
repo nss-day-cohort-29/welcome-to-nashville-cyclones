@@ -51,22 +51,20 @@ const domBuilder = {
     resultsBuilder(one, two){
         let resultsField =
         `
-         <p> ${one}</p>
-         <p> ${two}</p><button type = button class = 'saveButton'>SAVE</button>
-        
+        <div>
+         <p> ${one}<br>${two}</p>
+         <button type = button class ="saveButton">SAVE</button>
+        </div>
          `
 
          return resultsField;
     },
 
 
-    itineraryBuilder(){
+    itineraryBuilder(savedRestaurant){
         let itineraryField = 
-        `<h2>Itinerary</h2>
-        <p>Park: "User's park will be passed through here"</p>
-        <p>Restaurant: "User's restaurant will be passed through here"</p>
-        <p>Meet-up: "User's meetup will be passed through here"</p>
-        <p>Concert: "User's concert will be passed through here"</p>
+        `
+        <p>${savedRestaurant}</p>
         `
 
         return itineraryField;
