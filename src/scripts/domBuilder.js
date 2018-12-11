@@ -6,20 +6,25 @@ const domBuilder = {
 
         <select name="parkSearch" id="parkSearch">
             <option value="" selected disabled hidden>Parks by feature</option>
-            <option>ADA Accessible</option>
-            <option>Baseball Fields</option>
-            <option>Boat Launch</option>
-            <option>Community Center</option>
-            <option>Disc Golf</option>
-            <option>Dog Park</option>
-            <option>Hiking Trails</option>
-            <option>Horse Trails</option>
-            <option>Lake</option>
-            <option>Playground</option>
-            <option>Restrooms Available</option>
-            <option>Skate Park</option>
-            <option>Swimming Pool</option>
-            <option>Tennis Courts</option>
+            <option value="ada_accessible">ADA Accessible</option>
+            <option value="baseball_fields">Baseball Fields</option>
+            <option value="basketball_courts">Basketball Courts</option>
+            <option value="boat_launch">Boat Launch</option>
+            <option value="community_center">Community Center</option>
+            <option value="disc_golf">Disc Golf</option>
+            <option value="dog_park">Dog Park</option>
+            <option value="fishing_by_permit">Fishing</option>
+            <option value="football_multi_purpose_fields">Football Fields</option>
+            <option value="hiking_trails">Hiking Trails</option>
+            <option value="horse_trails">Horse Trails</option>
+            <option value="lake">Lake</option>
+            <option value="playground">Playground</option>
+            <option value="restrooms_available">Restrooms Available</option>
+            <option value="skate_park">Skate Park</option>
+            <option value="soccer_fields">Soccer Fields</option>
+            <option value="swimming_pool">Swimming Pool</option>
+            <option value="tennis_courts">Tennis Courts</option>
+            <option value="walk_jog_paths">Walking/Jogging Paths</options>
         </select>
         <br>
         <button type="button" id="parksButton">LETS GO!</button>
