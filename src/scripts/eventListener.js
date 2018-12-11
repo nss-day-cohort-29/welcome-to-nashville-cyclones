@@ -71,7 +71,7 @@ function restaurantsValue() {
 
 let notAnonymous = (event) => {
    // let previousNode = saveButton.parentElement;
-   let clickedButton = event.target.parentElement.textContent;
+   let clickedButton = event.target.parentElement.firstElementChild.textContent;
    console.log(clickedButton);
    domComponents.appendItineraryInput(domBuilder.itineraryBuilder(clickedButton));
 }

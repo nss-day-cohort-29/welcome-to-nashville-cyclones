@@ -47,8 +47,8 @@ const data = {
         .then(Allfoods => {
             let allfoods = Allfoods.restaurants
             allfoods.forEach(foods => {
-               console.log(`Restaurant name:  ${foods.restaurant.name}
-                 Type of food:  ${foods.restaurant.cuisines}`)
+            //    console.log(`Restaurant name:  ${foods.restaurant.name}
+            //      Type of food:  ${foods.restaurant.cuisines}`)
                  let foodHTML = foods.restaurant.name;
                  let addressHTML = foods.restaurant.location.address;
                  domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, addressHTML));
