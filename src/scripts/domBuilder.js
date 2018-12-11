@@ -3,7 +3,6 @@ const domBuilder = {
         let searchInputField =
         `<h2>Search Nashville</h2>
         <form>
-
         <select name="parkSearch" id="parkSearch">
             <option value="" selected disabled hidden>Parks by feature</option>
             <option>ADA Accessible</option>
@@ -48,12 +47,13 @@ const domBuilder = {
         return searchInputField;
     },
 
-    resultsBuilder(one, two){
+    resultsBuilder(Title, extraInfo, resultType){
         let resultsField =
         `
         <div>
-         <p> ${one}<br>${two}</p>
-         <button type = button class ="saveButton">Save</button>
+         <p> ${Title} 
+         <br> ${extraInfo}</p>
+         <button type = button class ="saveButton ${resultType}">Save</button>
         </div>
          `
 
@@ -61,23 +61,23 @@ const domBuilder = {
     },
 
 
-    itineraryBuilder(savedRestaurant, parkArg, restArg, meetArg, concertArg){
+    itineraryBuilder(savedData, buttonClass){
         let itineraryField = 
         `
-        <p id=finalAppend>${savedRestaurant}</p>
+        <p id=finalAppend>${savedData}</p>
         `
 
 
-        let finalPark = document.getElementById(parkArg)
+        let finalPark = document.getElementById(buttonClass)
         finalPark.innerHTML += itineraryField;
-        let finalRest = document.getElementById(restArg)
-        finalRest.innerHTML += itineraryField;
-        let finalMeet = document.getElementById(meetArg)
-        finalMeet.innerHTML += itineraryField;
-        let finalConcert = document.getElementById(concertArg)
-        finalConcert.innerHTML += itineraryField;
+        // let finalRest = document.getElementById("rest")
+        // finalRest.innerHTML += itineraryField;
+        // let finalMeet = document.getElementById("meet")
+        // finalMeet.innerHTML += itineraryField;
+        // let finalConcert = document.getElementById("concert")
+        // finalConcert.innerHTML += itineraryField;
         
-        return itineraryField;
+        // return itineraryField;
     },
 
    

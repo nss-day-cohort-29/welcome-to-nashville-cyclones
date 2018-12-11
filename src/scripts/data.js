@@ -10,7 +10,7 @@ const data = {
                 let parkHTML = park.park_name;
                 let parkAddressHTML = park.mapped_location_address;
 
-                domComponents.appendResultsInput(domBuilder.resultsBuilder(parkHTML, parkAddressHTML));
+                domComponents.appendResultsInput(domBuilder.resultsBuilder(parkHTML, parkAddressHTML, "park"));
             })
             clickSave();
         })
@@ -28,7 +28,7 @@ const data = {
                     console.log("Event name: " + event.name)  
                     let eventHTML = event.name
                     let eventAddy = event.dates.start.localDate
-                    domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, eventAddy));
+                    domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, eventAddy, "concert"));
                 })
                 clickSave();
             })
@@ -51,7 +51,7 @@ const data = {
             //      Type of food:  ${foods.restaurant.cuisines}`)
                  let foodHTML = foods.restaurant.name;
                  let addressHTML = foods.restaurant.location.address;
-                 domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, addressHTML));
+                 domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, addressHTML, "rest"));
             })
             clickSave();
         })
@@ -83,7 +83,7 @@ const data = {
 
                             // let eventHTML = event.name
                             // let two = "test"
-                            domComponents.appendResultsInput(domBuilder.resultsBuilder(venueName, venueAddress));
+                            domComponents.appendResultsInput(domBuilder.resultsBuilder(venueName, venueAddress, "meet"));
                             clickSave();
                         });
                 })
