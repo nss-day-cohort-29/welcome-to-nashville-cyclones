@@ -22,7 +22,7 @@ userSearchConcertsButton.addEventListener("click", concertsValue);
 function parksValue() {
    let userSearchParkValue = document.getElementById("parkSearch").value;
    // console.log(userSearchParkValue)
-   data.parkData();
+   data.parkData(userSearchParkValue);
    let sectionInfo = document.getElementById("results_container");
    let header = document.createElement("h2");
    sectionInfo.innerHTML = " ";
@@ -46,7 +46,7 @@ function restaurantsValue() {
  function meetupsValue() {
     let userSearchMeetupValue = document.getElementById("meetupSearch").value;
     console.log(userSearchMeetupValue);
-    data.queryEvents();
+    data.queryEvents(userSearchMeetupValue);
     let sectionInfo = document.getElementById("results_container");
     let header = document.createElement("h2");
     sectionInfo.innerHTML = " ";
@@ -58,7 +58,7 @@ function restaurantsValue() {
  function concertsValue() {
     let userSearchConcertValue = document.getElementById("concertSearch").value;
     console.log(userSearchConcertValue);
-    data.eventNameData()
+    data.eventNameData(userSearchConcertValue)
     let sectionInfo = document.getElementById("results_container");
     let header = document.createElement("h2");
     sectionInfo.innerHTML = " ";
@@ -71,7 +71,7 @@ function restaurantsValue() {
 
 let notAnonymous = (event) => {
    // let previousNode = saveButton.parentElement;
-   let clickedButton = event.target.parentElement.textContent;
+   let clickedButton = event.target.parentElement.firstElementChild.textContent;
    console.log(clickedButton);
    domComponents.appendItineraryInput(domBuilder.itineraryBuilder(clickedButton, "park", "rest", "meet", "concert"));
 }
@@ -82,3 +82,32 @@ let clickSave = () => {
       saveButton[i].addEventListener("click", notAnonymous);
    }
 }
+
+const inputParks = document.getElementById("parkSearch");
+const inputRestaurants = document.getElementById("restaurantSearch");
+const inputMeetups = document.getElementById("meetupSearch");
+const inputConcerts = document.getElementById("concertSearch");
+
+inputParks.addEventListener("keyup", function(event){
+   if (event.keyCode === 13) {
+      document.getElementById("parksButton").click();
+   }
+});
+
+inputRestaurants.addEventListener("keyup", function(event){
+   if (event.keyCode === 13) {
+      document.getElementById("restaurantsButton").click();
+   }
+});
+
+inputMeetups.addEventListener("keyup", function(event){
+   if (event.keyCode === 13) {
+      document.getElementById("meetButton").click();
+   }
+});
+
+inputConcerts.addEventListener("keyup", function(event){
+   if (event.keyCode === 13) {
+      document.getElementById("concertsButton").click();
+   }
+})

@@ -1,7 +1,7 @@
 const data = {
     // Fetches all parks in the Nashville area by name:
-    parkData(){
-        fetch("https://data.nashville.gov/resource/xbru-cfzi.json")
+    parkData(parkFeature){
+        fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?${parkFeature}=Yes`)
         .then(parks => parks.json())
         .then(AllParks => {
             AllParks.forEach(park => {
@@ -19,16 +19,16 @@ const data = {
 
     
     // Fetches all concerts in the Nashville Area by events:
-    eventNameData(){
-        fetch("https://app.ticketmaster.com/discovery/v2/events?apikey=lwzpJ1PeViGyxWDMggoTrRLi4cSrxXmy&city=Nashville&countryCode=US")
+    eventNameData(eventType){
+        fetch(`https://app.ticketmaster.com/discovery/v2/events?apikey=lwzpJ1PeViGyxWDMggoTrRLi4cSrxXmy&city=Nashville&countryCode=US&keyword=${eventType}&sort=date,asc`)
             .then(events => events.json())
             .then(Allevents => {
                 let allEvents = Allevents._embedded.events
                 allEvents.forEach(event => {
                     console.log("Event name: " + event.name)  
                     let eventHTML = event.name
-                    let two = "test"
-                    domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, two));
+                    let eventAddy = event.dates.start.localDate
+                    domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, eventAddy));
                 })
                 clickSave();
             })
@@ -47,8 +47,8 @@ const data = {
         .then(Allfoods => {
             let allfoods = Allfoods.restaurants
             allfoods.forEach(foods => {
-               console.log(`Restaurant name:  ${foods.restaurant.name}
-                 Type of food:  ${foods.restaurant.cuisines}`)
+            //    console.log(`Restaurant name:  ${foods.restaurant.name}
+            //      Type of food:  ${foods.restaurant.cuisines}`)
                  let foodHTML = foods.restaurant.name;
                  let addressHTML = foods.restaurant.location.address;
                  domComponents.appendResultsInput(domBuilder.resultsBuilder(foodHTML, addressHTML));
@@ -57,8 +57,8 @@ const data = {
         })
     },
 
-    queryEvents() {
-        fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&token=BJ2CF2XZDBK773VFPGPW", {
+    queryEvents(variable_name) {
+        fetch(`https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&q=${variable_name}&token=BJ2CF2XZDBK773VFPGPW`, {
             headers: {
                 "Authorization": "Bearer BJ2CF2XZDBK773VFPGPW"
             }
