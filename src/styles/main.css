@@ -59,30 +59,45 @@ section{
 }
 
 #search_container form{
-line-height: 70px;
+line-height: 35px;
 }
 
 #itinerary_container p{
     line-height: 35px;
 }
 
-input{
+input, select {
     font-family: 'Press Start 2P', cursive;
     padding: 12px 3px;
     display: inline-block;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 10px;
+    width: 233px;
 }
+
+select {
+    -webkit-appearance: menulist-button;
+    height: 36px;
+    
+}
+
+select:focus {
+    min-width: 180px;
+    width: auto;
+} 
 
 button{
     font-family: 'Press Start 2P', cursive;
     font-size: 9px;
-    padding: 5px;
+    padding: 6px;
+    border-radius: 3px;
 }
 
 #search_container button{
     margin-left: 12px;
+    margin-bottom: 40px;
 }
 
 #search_container form{
