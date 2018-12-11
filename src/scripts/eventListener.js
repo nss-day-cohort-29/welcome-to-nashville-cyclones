@@ -22,7 +22,7 @@ userSearchConcertsButton.addEventListener("click", concertsValue);
 function parksValue() {
    let userSearchParkValue = document.getElementById("parkSearch").value;
    // console.log(userSearchParkValue)
-   data.parkData();
+   data.parkData(userSearchParkValue);
    let sectionInfo = document.getElementById("results_container");
    let header = document.createElement("h2");
    sectionInfo.innerHTML = " ";
@@ -58,7 +58,7 @@ function restaurantsValue() {
  function concertsValue() {
     let userSearchConcertValue = document.getElementById("concertSearch").value;
     console.log(userSearchConcertValue);
-    data.eventNameData()
+    data.eventNameData(userSearchConcertValue)
     let sectionInfo = document.getElementById("results_container");
     let header = document.createElement("h2");
     sectionInfo.innerHTML = " ";

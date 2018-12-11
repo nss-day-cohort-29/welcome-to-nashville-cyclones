@@ -1,7 +1,7 @@
 const data = {
     // Fetches all parks in the Nashville area by name:
-    parkData(){
-        fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?${}`)
+    parkData(parkFeature){
+        fetch(`https://data.nashville.gov/resource/xbru-cfzi.json?${parkFeature}=Yes`)
         .then(parks => parks.json())
         .then(AllParks => {
             AllParks.forEach(park => {
@@ -18,16 +18,16 @@ const data = {
 
     
     // Fetches all concerts in the Nashville Area by events:
-    eventNameData(){
-        fetch("https://app.ticketmaster.com/discovery/v2/events?apikey=lwzpJ1PeViGyxWDMggoTrRLi4cSrxXmy&city=Nashville&countryCode=US")
+    eventNameData(eventType){
+        fetch(`https://app.ticketmaster.com/discovery/v2/events?apikey=lwzpJ1PeViGyxWDMggoTrRLi4cSrxXmy&city=Nashville&countryCode=US&keyword=${eventType}`)
             .then(events => events.json())
             .then(Allevents => {
                 let allEvents = Allevents._embedded.events
                 allEvents.forEach(event => {
                     console.log("Event name: " + event.name)  
                     let eventHTML = event.name
-                    let two = "test"
-                    domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, two));
+                    let eventAddy = event.dates.start.localDate
+                    domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, eventAddy));
                 })
             })
         },
