@@ -23,8 +23,8 @@ const domBuilder = {
         `
         <div>
          <p> ${one}<br>${two}</p>
+         <button type = button class ="saveButton">SAVE</button>
         </div>
-        <button type = button class ="saveButton">SAVE</button>
          `
 
          return resultsField;
