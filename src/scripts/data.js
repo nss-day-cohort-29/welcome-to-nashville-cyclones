@@ -20,7 +20,7 @@ const data = {
     
     // Fetches all concerts in the Nashville Area by events:
     eventNameData(){
-        fetch("https://app.ticketmaster.com/discovery/v2/events?apikey=lwzpJ1PeViGyxWDMggoTrRLi4cSrxXmy&city=Nashville&countryCode=US")
+        fetch("https://app.ticketmaster.com/discovery/v2/events?apikey=lwzpJ1PeViGyxWDMggoTrRLi4cSrxXmy&city=Nashville&countryCode=US&sort=date,asc")
             .then(events => events.json())
             .then(Allevents => {
                 let allEvents = Allevents._embedded.events
