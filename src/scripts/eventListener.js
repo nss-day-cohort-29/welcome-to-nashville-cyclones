@@ -21,22 +21,34 @@ userSearchConcertsButton.addEventListener("click", concertsValue);
 // These functions target the input sections that the user will type in, and returns the input value to the console.
 function parksValue() {
    let userSearchParkValue = document.getElementById("parkSearch").value;
-   console.log(userSearchParkValue);
+   // console.log(userSearchParkValue)
+   data.parkData();
 }
 
 function restaurantsValue() {
     let userSearchRestaurantValue = document.getElementById("restaurantSearch").value;
-   //  console.log(userSearchRestaurantValue);
- }
+     data.restaurantData(userSearchRestaurantValue);
+ };
+
+ 
 
  function meetupsValue() {
     let userSearchMeetupValue = document.getElementById("meetupSearch").value;
     console.log(userSearchMeetupValue);
+    data.queryEvents();
  }
 
 
  function concertsValue() {
     let userSearchConcertValue = document.getElementById("concertSearch").value;
     console.log(userSearchConcertValue);
+    data.eventNameData()
  }
 
+let clickSave = () => {
+   let saveButton = document.querySelector(".saveButton");
+   console.log(saveButton )
+   saveButton.addEventListener("click", function() {
+      console.log("I work");
+   })
+}
