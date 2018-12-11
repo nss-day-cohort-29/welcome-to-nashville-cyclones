@@ -57,8 +57,8 @@ const data = {
         })
     },
 
-    queryEvents() {
-        fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&token=BJ2CF2XZDBK773VFPGPW", {
+    queryEvents(variable_name) {
+        fetch(`https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&q=${variable_name}&token=BJ2CF2XZDBK773VFPGPW`, {
             headers: {
                 "Authorization": "Bearer BJ2CF2XZDBK773VFPGPW"
             }
