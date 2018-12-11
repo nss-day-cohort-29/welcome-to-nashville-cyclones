@@ -55,9 +55,9 @@ const data = {
     },
 
     queryEvents() {
-        fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&token=BJXHAMMBOWECTXM2ZLAL", {
+        fetch("https://www.eventbriteapi.com/v3/events/search/?location.latitude=36.174465&location.longitude=-86.767960&token=BJ2CF2XZDBK773VFPGPW", {
             headers: {
-                "Authorization": "Bearer BJXHAMMBOWECTXM2ZLAL"
+                "Authorization": "Bearer BJ2CF2XZDBK773VFPGPW"
             }
         })
             .then(response => response.json())
@@ -75,8 +75,8 @@ const data = {
                         .then(venues => venues.json())
                         .then(parsedVenues => {
                             
-                            let venueAddress = parsedVenues.name.address_1;
-                            console.log(`Venue Name: ${venueName} Venue Address: ${venueAddress}`);
+                            let venueAddress = parsedVenues.address.address_1;
+                            console.log(`Event: ${venueName} Address: ${venueAddress}`);
 
                             // let eventHTML = event.name
                             // let two = "test"
