@@ -23,11 +23,22 @@ function parksValue() {
    let userSearchParkValue = document.getElementById("parkSearch").value;
    // console.log(userSearchParkValue)
    data.parkData();
+   let sectionInfo = document.getElementById("results_container");
+   let header = document.createElement("h2");
+   sectionInfo.innerHTML = " ";
+   header.innerHTML = "Results";
+   sectionInfo.appendChild(header);
 }
 
 function restaurantsValue() {
     let userSearchRestaurantValue = document.getElementById("restaurantSearch").value;
      data.restaurantData(userSearchRestaurantValue);
+     let sectionInfo = document.getElementById("results_container");
+     let header = document.createElement("h2");
+     sectionInfo.innerHTML = " ";
+     header.innerHTML = "Results";
+     sectionInfo.appendChild(header);
+     
  };
 
  
@@ -36,6 +47,11 @@ function restaurantsValue() {
     let userSearchMeetupValue = document.getElementById("meetupSearch").value;
     console.log(userSearchMeetupValue);
     data.queryEvents();
+    let sectionInfo = document.getElementById("results_container");
+    let header = document.createElement("h2");
+    sectionInfo.innerHTML = " ";
+    header.innerHTML = "Results";
+    sectionInfo.appendChild(header);
  }
 
 
@@ -43,7 +59,15 @@ function restaurantsValue() {
     let userSearchConcertValue = document.getElementById("concertSearch").value;
     console.log(userSearchConcertValue);
     data.eventNameData()
+    let sectionInfo = document.getElementById("results_container");
+    let header = document.createElement("h2");
+    sectionInfo.innerHTML = " ";
+    header.innerHTML = "Results";
+    sectionInfo.appendChild(header);
+    
  }
+
+//The function that finds the save button click and adds it to the ininerary
 
 let clickSave = () => {
    let saveButton = document.querySelector(".saveButton");

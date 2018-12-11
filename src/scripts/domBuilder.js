@@ -21,10 +21,10 @@ const domBuilder = {
     resultsBuilder(one, two, className){
         let resultsField =
         `
-        <div class="${className}"
+        <div class="${className}">
          <p> ${one}</p>
          <p> ${two}</p><button type = button class ="saveButton">SAVE</button>
-        
+        </div>
          `
 
          return resultsField;
