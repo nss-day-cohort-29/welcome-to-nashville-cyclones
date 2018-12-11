@@ -73,6 +73,7 @@ let clickSave = () => {
    let saveButton = document.querySelector(".saveButton");
    console.log(saveButton )
    saveButton.addEventListener("click", function() {
-      console.log("I work");
+      previousNode = saveButton.previousSibling
+      console.log(previousNode);
    })
 }
