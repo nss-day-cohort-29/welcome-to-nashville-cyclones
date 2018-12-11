@@ -53,7 +53,7 @@ const domBuilder = {
         `
         <div>
          <p> ${one}<br>${two}</p>
-         <button type = button class ="saveButton">SAVE</button>
+         <button type = button class ="saveButton">Save</button>
         </div>
          `
 
@@ -61,16 +61,26 @@ const domBuilder = {
     },
 
 
-    itineraryBuilder(savedRestaurant){
+    itineraryBuilder(savedRestaurant, parkArg, restArg, meetArg, concertArg){
         let itineraryField = 
         `
-        <p>${savedRestaurant}</p>
+        <p id=finalAppend>${savedRestaurant}</p>
         `
 
+
+        let finalPark = document.getElementById(parkArg)
+        finalPark.innerHTML += itineraryField;
+        let finalRest = document.getElementById(restArg)
+        finalRest.innerHTML += itineraryField;
+        let finalMeet = document.getElementById(meetArg)
+        finalMeet.innerHTML += itineraryField;
+        let finalConcert = document.getElementById(concertArg)
+        finalConcert.innerHTML += itineraryField;
+        
         return itineraryField;
-    }
+    },
 
-
+   
 }
 
 // domBuilder.inputfieldBuilder();

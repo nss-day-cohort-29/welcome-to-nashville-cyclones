@@ -73,7 +73,7 @@ let notAnonymous = (event) => {
    // let previousNode = saveButton.parentElement;
    let clickedButton = event.target.parentElement.textContent;
    console.log(clickedButton);
-   domComponents.appendItineraryInput(domBuilder.itineraryBuilder(clickedButton));
+   domComponents.appendItineraryInput(domBuilder.itineraryBuilder(clickedButton, "park", "rest", "meet", "concert"));
 }
 
 let clickSave = () => {
