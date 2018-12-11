@@ -46,4 +46,3 @@ const domBuilder = {
 }
 
 // domBuilder.inputfieldBuilder();
-
