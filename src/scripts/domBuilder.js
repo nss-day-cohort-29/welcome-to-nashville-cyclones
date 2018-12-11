@@ -9,12 +9,9 @@ const domBuilder = {
             <option>ADA Accessible</option>
             <option>Baseball Fields</option>
             <option>Boat Launch</option>
-            <option>Camping Available</option>
             <option>Community Center</option>
             <option>Disc Golf</option>
             <option>Dog Park</option>
-            <option>Fishing</option>
-            <option>Football Fields</option>
             <option>Hiking Trails</option>
             <option>Horse Trails</option>
             <option>Lake</option>
@@ -23,7 +20,6 @@ const domBuilder = {
             <option>Skate Park</option>
             <option>Swimming Pool</option>
             <option>Tennis Courts</option>
-            <option>Walking/Jogging Paths</option>
         </select>
         <br>
         <button type="button" id="parksButton">LETS GO!</button>
