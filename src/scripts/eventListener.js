@@ -21,20 +21,37 @@ userSearchConcertsButton.addEventListener("click", concertsValue);
 // These functions target the input sections that the user will type in, and returns the input value to the console.
 function parksValue() {
    let userSearchParkValue = document.getElementById("parkSearch").value;
-   console.log(userSearchParkValue)
+   // console.log(userSearchParkValue)
    data.parkData();
+   let sectionInfo = document.getElementById("results_container");
+   let header = document.createElement("h2");
+   sectionInfo.innerHTML = " ";
+   header.innerHTML = "Results";
+   sectionInfo.appendChild(header);
 }
 
 function restaurantsValue() {
     let userSearchRestaurantValue = document.getElementById("restaurantSearch").value;
-    console.log(userSearchRestaurantValue);
-    data.restaurantData();
- }
+     data.restaurantData(userSearchRestaurantValue);
+     let sectionInfo = document.getElementById("results_container");
+     let header = document.createElement("h2");
+     sectionInfo.innerHTML = " ";
+     header.innerHTML = "Results";
+     sectionInfo.appendChild(header);
+     
+ };
+
+ 
 
  function meetupsValue() {
     let userSearchMeetupValue = document.getElementById("meetupSearch").value;
     console.log(userSearchMeetupValue);
     data.queryEvents();
+    let sectionInfo = document.getElementById("results_container");
+    let header = document.createElement("h2");
+    sectionInfo.innerHTML = " ";
+    header.innerHTML = "Results";
+    sectionInfo.appendChild(header);
  }
 
 
@@ -42,5 +59,11 @@ function restaurantsValue() {
     let userSearchConcertValue = document.getElementById("concertSearch").value;
     console.log(userSearchConcertValue);
     data.eventNameData()
+    let sectionInfo = document.getElementById("results_container");
+    let header = document.createElement("h2");
+    sectionInfo.innerHTML = " ";
+    header.innerHTML = "Results";
+    sectionInfo.appendChild(header);
+    
  }
 
