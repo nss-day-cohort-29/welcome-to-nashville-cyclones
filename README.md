@@ -2,6 +2,8 @@
 
 Hi folks! This app will allow you to search for parks, foods, meet-ups, and concerts happening in the Nashville area.
 
+![](Welcome_to_Nashville.gif)
+
 With our app you can:
 - Search Nashville's parks by each of the park's features (i.e. dog parks, playgrounds, and more).
 - Search Nashville's restaurants by food type (i.e. burgers, tacos, and more).
