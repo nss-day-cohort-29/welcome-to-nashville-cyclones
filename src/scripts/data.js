@@ -5,8 +5,8 @@ const data = {
         .then(parks => parks.json())
         .then(AllParks => {
             AllParks.forEach(park => {
-                console.log("Park name: " + park.park_name)
-                console.log("Park address: " + park.mapped_location_address)
+                // console.log("Park name: " + park.park_name)
+                // console.log("Park address: " + park.mapped_location_address)
                 let parkHTML = park.park_name;
                 let parkAddressHTML = park.mapped_location_address;
 
@@ -25,7 +25,7 @@ const data = {
             .then(Allevents => {
                 let allEvents = Allevents._embedded.events
                 allEvents.forEach(event => {
-                    console.log("Event name: " + event.name)  
+                    // console.log("Event name: " + event.name)  
                     let eventHTML = event.name
                     let eventAddy = event.dates.start.localDate
                     domComponents.appendResultsInput(domBuilder.resultsBuilder(eventHTML, eventAddy, "concert"));
@@ -79,7 +79,7 @@ const data = {
                         .then(parsedVenues => {
                             
                             let venueAddress = parsedVenues.address.address_1;
-                            console.log(`Event: ${venueName} Address: ${venueAddress}`);
+                            // console.log(`Event: ${venueName} Address: ${venueAddress}`);
 
                             // let eventHTML = event.name
                             // let two = "test"
