@@ -124,8 +124,8 @@ inputConcerts.addEventListener("keyup", function(event){
 
 
 
-let saveItinerary = document.getElementById("saveToJson");
-saveItinerary.addEventListener("click", putToJson)
+// let saveItinerary = document.getElementById("saveToJson");
+// saveItinerary.addEventListener("click", putToJson)
 
 
 
