@@ -66,7 +66,7 @@ const domBuilder = {
     itineraryBuilder(savedData, buttonClass){
         let itineraryField = 
         `
-        <p id=finalAppend>
+        <p class="finalAppend">
         ${savedData}</p>
         `
 
