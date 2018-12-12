@@ -26,5 +26,5 @@ Thank you and Welcome To Nashville!
 
 
 
-## &copy Cyclones 2018
+## &copy; Cyclones 2018
 ### Asia Carter, Brittany Ramos-Janeway, Hunter Metts, Jordan Rosas, Megan Cruzen
