@@ -67,29 +67,34 @@ function restaurantsValue() {
     
  }
 
-//The function that finds the save button click and adds it to the ininerary
-
-let notAnonymous = (event) => {
-   
-   let clickedButton = event.target.parentElement.firstElementChild.innerHTML;
+// This runs itineraryBuilder inside domBuilder and adds the HTML and a button class depending on what API was called.
+let getSavedResult = (event) => {
+   let savedHTML = event.target.parentElement.firstElementChild.innerHTML;
    let buttonClass = event.target.classList[1];
-   
-   console.log(clickedButton, buttonClass);
-   domBuilder.itineraryBuilder(clickedButton, buttonClass);
+   domBuilder.itineraryBuilder(savedHTML, buttonClass);
 }
 
+// WHEN "save" button is clicked:
 let clickSave = () => {
+    // Taking all elements with class="saveButton"
    let saveButton = document.querySelectorAll(".saveButton");
+//    This loops through all "saveButton" elements and adds an event listener to the save buttons.
    for(let i = 0; i < saveButton.length; i++) {
-      saveButton[i].addEventListener("click", notAnonymous);
+    //    Then runs "getSavedResult" defined at line 71
+      saveButton[i].addEventListener("click", getSavedResult);
    }
 }
 
+
+// Targeting each input field by id
 const inputParks = document.getElementById("parkSearch");
 const inputRestaurants = document.getElementById("restaurantSearch");
 const inputMeetups = document.getElementById("meetupSearch");
 const inputConcerts = document.getElementById("concertSearch");
 
+// Event listener "listening" for key 13 (enter key) 
+// Once enter key is pressed, "click()" function is run
+// One eventListener for each input field
 inputParks.addEventListener("keyup", function(event){
    if (event.keyCode === 13) {
       document.getElementById("parksButton").click();
@@ -113,3 +118,43 @@ inputConcerts.addEventListener("keyup", function(event){
       document.getElementById("concertsButton").click();
    }
 })
+
+
+
+
+
+
+let saveItinerary = document.getElementById("saveToJson");
+saveItinerary.addEventListener("click", putToJson)
+
+
+
+
+
+
+
+
+// Stretch goal attempt:
+// function putToJson(){
+//     let iParkHTML = document.getElementById("park").textContent;
+//     let iRestaurantHTML = document.getElementById("rest").textContent;
+//     let iMeetHTML = document.getElementById("meet").textContent;
+//     let iConcertHTML = document.getElementById("concert").textContent;
+//     let iParkKey = document.getElementById("park");
+//     let iRestaurantKey = document.getElementById("rest");
+//     let iMeetKey = document.getElementById("meet");
+//     let iConcertKey = document.getElementById("concert");
+//     // console.log(iParkKey, iRestaurantKey, iMeetKey, iConcertKey, iParkHTML, iRestaurantHTML, iMeetHTML, iConcertHTML);
+//     let userKeyAndValue = {
+//         parkKey: iParkKey,
+//         parkName: iParkHTML,
+//         restKey:iRestaurantKey,
+//         restName:iRestaurantHTML,
+//         meetKey:iMeetKey,
+//         meetName:iMeetHTML,
+//         concertKey:iConcertKey,
+//         concertName:iConcertHTML
+//     }
+//     console.log(userKeyAndValue)
+// }
+
