@@ -1,4 +1,8 @@
+// domBuilder: Holds methods that will create all HTML elements when the functions are called upon.
+
 const domBuilder = {
+    // When page loads, the following function is called in main.js:
+    // This function populates the search container with ALL search input fields.
     inputfieldBuilder(){
         let searchInputField =
         `<h2>Search Nashville</h2>
@@ -44,19 +48,22 @@ const domBuilder = {
         <button type="button" id ="concertsButton">LETS GO!</button>
         </form>
         `
-        // console.log(searchInputField);
         return searchInputField;
     },
 
-    resultsBuilder(Title, extraInfo, resultType){
+
+// Called on click inside of each method (fetch) within data.js
+// Creates HTML elements with the item name, item information, and the type of item
+// resultType = class that's defined inside each fetch, WHICH ONLY RUNS ON CLICK "lets go!"
+    resultsBuilder(itemName, itemInfo, resultType){
         let resultsField =
         `
         <div>
             <div>
                 <p>
-                ${Title}
+                ${itemName}
                 <br />
-                ${extraInfo}</p>
+                ${itemInfo}</p>
             </div>
             <button type="button" class="saveButton ${resultType}">Save</button>
          </div>
@@ -65,29 +72,17 @@ const domBuilder = {
          return resultsField;
     },
     
-
+    // Takes HTML passed through the function "getSavedResult" in eventListener.js and takes "savedHTML" and "buttonClass" as arguments
+    // This function runs at the END of "getSavedResult"
     itineraryBuilder(savedData, buttonClass){
         let itineraryField = 
         `
         <p class="finalAppend">
         ${savedData}</p>
         `
-
-
-        let finalPark = document.getElementById(buttonClass)
-        finalPark.innerHTML = itineraryField;
-        
-        // let finalRest = document.getElementById("rest")
-        // finalRest.innerHTML += itineraryField;
-        // let finalMeet = document.getElementById("meet")
-        // finalMeet.innerHTML += itineraryField;
-        // let finalConcert = document.getElementById("concert")
-        // finalConcert.innerHTML += itineraryField;
-        
-        // return itineraryField;
+        let finalResult = document.getElementById(buttonClass)
+        finalResult.innerHTML = itineraryField;
     },
 
    
 }
-
-// domBuilder.inputfieldBuilder();

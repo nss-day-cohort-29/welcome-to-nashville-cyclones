@@ -9,27 +9,36 @@
     <link rel="stylesheet" href="styles/main.css">
   </head>
   <body>
-
    <header>
      <h1>Welcome <br> To Nashville!</h1>
    </header>
 
+   <!-- This article container holds all page content -->
    <article id ="container">
+     <!-- Container that holds all search fields -->
       <section id = "search_container"></section>
+      <!-- Container that holds the user's search results -->
       <section id = "results_container">
         <h2>Results</h2>
       </section>
+      <!-- Container that holds user's saved itinerary -->
       <section id = "itinerary_container">
         <h2>Itinerary</h2> 
         <h3>Park:</h3>
-        <p id="park"></p>
+        <!-- Id below displays saved park data (Park name and address) -->
+        <p id ="park"></p>
         <h3>Restaurant:</h3>
+        <!-- Id below displays saved restaraunt data (Restaraunt name and address) -->
         <p id="rest"></p>
         <h3>Meet-up: </h3>
+        <!-- Id below displays saved meet-up data (meet-up name and address) -->
         <p id="meet"></p>
         <h3>Concert: </h3>
+        <!-- Id below displays saved concert data (concert name and start date) -->
         <p id="concert"></p>
-      </section>
+        <!-- Trying to save itinerary to database -->
+        <!-- <button id = "saveToJson">SAVE</button>
+      </section> -->
 
 
    </article>
