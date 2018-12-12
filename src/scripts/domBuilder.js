@@ -52,25 +52,28 @@ const domBuilder = {
         let resultsField =
         `
         <div>
-         <p> ${Title} 
-         <br> ${extraInfo}</p>
+         <p>
+         ${Title}<br>
+         ${extraInfo}</p>
          <button type = button class ="saveButton ${resultType}">Save</button>
-        </div>
+         </div>
          `
 
          return resultsField;
     },
-
+    
 
     itineraryBuilder(savedData, buttonClass){
         let itineraryField = 
         `
-        <p id=finalAppend>${savedData}</p>
+        <p id=finalAppend>
+        ${savedData}</p>
         `
 
 
         let finalPark = document.getElementById(buttonClass)
-        finalPark.innerHTML += itineraryField;
+        finalPark.innerHTML = itineraryField;
+        
         // let finalRest = document.getElementById("rest")
         // finalRest.innerHTML += itineraryField;
         // let finalMeet = document.getElementById("meet")

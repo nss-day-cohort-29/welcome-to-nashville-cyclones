@@ -14,6 +14,7 @@ const domComponents = {
     appendItineraryInput(domElement){
         let searchContainer = document.querySelector("#itinerary_container");
         searchContainer.innerHTML += domElement;
+        
         // return searchContainer;
     }
 }

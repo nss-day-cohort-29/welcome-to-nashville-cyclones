@@ -70,12 +70,12 @@ function restaurantsValue() {
 //The function that finds the save button click and adds it to the ininerary
 
 let notAnonymous = (event) => {
-   // let previousNode = saveButton.parentElement;
-   let clickedButton = event.target.parentElement.firstElementChild.textContent;
+   
+   let clickedButton = event.target.parentElement.firstElementChild.textContent;;
    let buttonClass = event.target.classList[1];
-   console.log(clickedButton);
+   
 
-  
+  console.log(clickedButton, buttonClass);
 domBuilder.itineraryBuilder(clickedButton, buttonClass);
 }
 
