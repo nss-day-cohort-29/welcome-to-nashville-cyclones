@@ -71,12 +71,11 @@ function restaurantsValue() {
 
 let notAnonymous = (event) => {
    
-   let clickedButton = event.target.parentElement.firstElementChild.textContent;;
+   let clickedButton = event.target.parentElement.firstElementChild.innerHTML;
    let buttonClass = event.target.classList[1];
    
-
-  console.log(clickedButton, buttonClass);
-domBuilder.itineraryBuilder(clickedButton, buttonClass);
+   console.log(clickedButton, buttonClass);
+   domBuilder.itineraryBuilder(clickedButton, buttonClass);
 }
 
 let clickSave = () => {
