@@ -52,10 +52,13 @@ const domBuilder = {
         let resultsField =
         `
         <div>
-         <p>
-         ${Title}<br>
-         ${extraInfo}</p>
-         <button type = button class ="saveButton ${resultType}">Save</button>
+            <div>
+                <p>
+                ${Title}
+                <br />
+                ${extraInfo}</p>
+            </div>
+            <button type="button" class="saveButton ${resultType}">Save</button>
          </div>
          `
 
